@@ -65,13 +65,19 @@ var	isEven	=	function(x)	{
 
 var	numbers	=	[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 console.log("fuction {every}");
+//a função eIgual retornará false e esta será a única
+//vez que a função será executada.
 numbers.every(isEven);
 console.log("fuction {some}");
+//o primeiro resultado positivo (true) da iteração será retornado e findará
+// o looop
 numbers.some(isEven);
 console.log("fuction {forEeach}");
+//itera sobre todos os elementos aplicando um callcack
 numbers.forEach(function(x){
   console.log((x % 2 == 0));
 });
+
 //o método map() aplica uma função de calback sobre todos os elementos
 //de um array e retorna um novo array.
 console.log("function {map}");
@@ -95,7 +101,7 @@ numbers.reduce(function(previous, current, index){
 
 console.log(numbers);
 
-
+//reverte o array
 console.log("function {reverse}");
 var newNumbers = [1,2,3, 10, 20, 12, 11, 8, 9, 13];
 console.log(newNumbers.reverse());
@@ -123,3 +129,30 @@ function comparePerson(a,b){
 }
 
 console.log(friends.sort(comparePerson));
+
+//ordenando string
+var names = ["Ana", "ana", "john", "John"];
+names.sort(function(a, b){
+  if(a.toLowerCase() < b.toLowerCase()){
+    return -1;
+  }
+  if(a.toLowerCase() < b.toLowerCase()){
+    return 1;
+  }
+  return 0;
+});
+
+var names2 = ['Maève',	'Maeve'];
+
+console.log(names2.sort(function(a,b){
+  return a.localeCompare(b);
+}));
+
+//buscando
+console.log(numbers.indexOf(10));
+console.log(numbers.indexOf(100));
+//imprime o array como uma string dividida por vírgulas
+console.log(numbers.toString());
+//usando um caracter para separar elementos do array para um string
+var numbersString = numbers.join("-");
+console.log(numbersString);
