@@ -70,7 +70,27 @@ function baseConverter(decNumber, base){
   return baseString;
 }
 
+function celsosToFahrenhiet(temp){
+  var remStack = new Stack(),
+  fahrenheit,
+  baseString;
 
-console.log(divideBy2(233));
-console.log(divideBy2(10));
-console.log(divideBy2(1000));
+  fahrenheit = (temp * 9 / 5) + 32;
+  remStack.push(fahrenheit);
+
+  baseString = remStack.pop().toString(); //{7}
+
+  return baseString;;
+}
+
+//cria a instancia de stack
+//inicializa variáveis
+//efetua operações e adiciona dentro da Stack
+//verifica o status da Stack (vazia ou cheia)
+//processa e retorna o resultado processando a string.
+
+console.log(baseConverter(100345,2));
+console.log(baseConverter(100345, 8));
+console.log(baseConverter(100345, 16));
+console.log("celsosToFahrenhiet");
+console.log(celsosToFahrenhiet(32));
